@@ -3,7 +3,7 @@
 #include <bitset>
 #include <algorithm>
 
-static const std::string base64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+const std::string base64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 std::string StringToBase64(const std::string& source_string) {
 	//Преобразование исходной строки в битовую последовательность
@@ -40,7 +40,7 @@ std::string StringToBase64(const std::string& source_string) {
 }
 
 std::string Base64ToString(const std::string& base64_string) {
-	//Нахождение количества вхождений символа '=' для его пропуска
+	//Нахождение количества вхождений символа '=', для его пропуска
 	int counter = std::count(base64_string.begin(), base64_string.end(), '=');
 	//Преобразование строки base64 в битовую последовательность
 	std::string bit_string;
@@ -69,7 +69,6 @@ std::string Base64ToString(const std::string& base64_string) {
 
 
 int main() {
-
 	std::string test_string = "This is a test string for encoding and decoding.";
 	std::cout << "Encoded string in base64: " << StringToBase64(test_string) << std::endl;
 	std::cout << "Reverse: " << Base64ToString(StringToBase64(test_string)) << std::endl;
