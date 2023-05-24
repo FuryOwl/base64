@@ -8,6 +8,7 @@
 #include "getopt_windows.h" // Alternative implementation getopt() for Windows
 #else // Compilation for UNIX
 #include <unistd.h>
+#include <getopt.h>
 #endif
 
 static const std::string base64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
