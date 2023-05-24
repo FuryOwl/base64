@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.2)
+
+project(Base64)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(Base64 main.cpp)
+
+if(UNIX)
+	target_compile_definitions(Base64 PRIVATE UNIX)
+esleif(WIN32)
+	target_compile_definitions(Base64 PRIVATE WIN32)
+endif()
