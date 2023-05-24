@@ -127,11 +127,11 @@ int main(int argc, char* argv[]) {
 	}
 	else if (encode_mode) {
 		std::string encoded_text = StringToBase64(input_text);
-		std::cout << "Encoded string in base64: " << encoded_text << std::endl;
+		std::cout << encoded_text << std::endl;
 	}
 	else if (decode_mode) {
 		std::string decoded_text = Base64ToString(input_text);
-		std::cout << "Decoded string: " << decoded_text << std::endl;
+		std::cout << decoded_text << std::endl;
 	}
 	else {
 		std::cerr << "No mode selected. Use -e for encoding or -d for decoding." << std::endl;

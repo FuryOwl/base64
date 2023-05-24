@@ -1,16 +1,17 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(base64)
+project(mybase64)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(base64 main.cpp getopt_windows.h)
+add_executable(mybase64 main.cpp getopt_windows.h)
 
-target_include_directories(base64 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(mybase64 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 if(UNIX)
-	target_compile_definitions(base64 PRIVATE UNIX)
-	target_link_libraries(base64 PRIVATE getopt)
+        target_compile_definitions(mybase64 PRIVATE UNIX)
+        find_library(GETOPT_LIBRARIES getopt)
+        target_link_libraries(mybase64 PRIVATE ${CMAKE_LIBRARIES})
 elseif(WIN32)
-	target_compile_definitions(base64 PRIVATE WIN32)
+        target_compile_definitions(mybase64 PRIVATE WIN32)
 endif()
