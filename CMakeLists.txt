@@ -10,6 +10,7 @@ target_include_directories(base64 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 if(UNIX)
 	target_compile_definitions(base64 PRIVATE UNIX)
+	target_link_libraries(base64 PRIVATE getopt)
 elseif(WIN32)
 	target_compile_definitions(base64 PRIVATE WIN32)
 endif()
